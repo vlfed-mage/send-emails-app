@@ -1,0 +1,132 @@
+$base: #aaa !default;
+$fontSizeSmall: 12px !default;
+$fontSizeBase: 16px !default;
+$borderColor: $base !default;
+$brandPrimary: #399EFE !default;
+
+.container {
+    padding: 24px;
+    box-shadow: 0 2px 16px rgba(29, 29, 27, 0.16);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+
+    > h1 {
+        margin-top: 0;
+    }
+}
+
+form {
+    display: grid;
+    gap: 16px;
+
+    input {
+        height: 48px;
+        transition: all .3s;
+        background: $base;
+        font-size: $fontSizeBase;
+        font-weight: 500;
+        padding: 0 15px;
+        background: white;
+        border: 1px solid $borderColor;
+        border-radius: 8px;
+        color: black;
+
+        &::placeholder {
+            color: $base;
+            transition: all .3s;
+        }
+
+        &:focus {
+            &::placeholder {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    div[data-contents='true'] {
+        min-height: 100px;
+        padding: 15px;
+        background: white;
+        border: 1px solid $borderColor;
+        border-radius: 8px;
+    }
+}
+
+table {
+    border: 1px solid $borderColor;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(29, 29, 27, 0.16);
+
+    th {
+        text-align: left;
+    }
+
+    th,
+    td {
+        border: 1px solid $borderColor;
+        border-collapse: collapse;
+        padding: 16px;
+    }
+}
+
+button {
+    color: white;
+    text-decoration: none;
+    background: $brandPrimary;
+    font-size: $fontSizeBase;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid $brandPrimary;
+    outline: none;
+    padding: 0 24px;
+    min-height: 48px;
+    transition: all .2s ease;
+    white-space: nowrap;
+    border-radius: 8px;
+
+    &:disabled {
+        opacity: .4;
+        cursor: not-allowed;
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 2px 16px rgba(29, 29, 27, 0.16);
+    }
+
+    svg {
+        fill: transparent;
+    }
+
+    &.logout {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 0;
+}
+
